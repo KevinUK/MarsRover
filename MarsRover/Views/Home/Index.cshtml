@@ -1,0 +1,31 @@
+﻿@model MarsRover.Models.HomePageViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Upper Boundary Info</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.UpperRightXCoOrdinate)
+    @Html.EditorFor(m => m.UpperRightXCoOrdinate)
+    //Use css/divs etc rather than br tag
+    <br />
+    @Html.LabelFor(m => m.UpperRightYCoOrdinate)
+    @Html.EditorFor(m => m.UpperRightYCoOrdinate)
+    <br />
+    @Html.EditorFor(m => m.MarsRover)
+    <br />
+    <br />
+    <input type="submit" value="Move Robots" />
+}
+
+@if (Model.MarsRover.Any(m => m.FinalPosition != string.Empty))
+{
+    <h2>Results</h2>
+    foreach (var marsRover in Model.MarsRover)
+    {
+        @marsRover.FinalPosition
+        <br />
+    }
+}

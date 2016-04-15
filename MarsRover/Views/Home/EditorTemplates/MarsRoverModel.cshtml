@@ -1,0 +1,16 @@
+﻿@model MarsRover.Models.MarsRoverModel
+@if (Model != null)
+{
+<h2>Robot Info</h2>
+@Html.LabelFor(m => m.CurrentPosition.X)
+@Html.EditorFor(m => m.CurrentPosition.X)
+<br />
+@Html.LabelFor(m => m.CurrentPosition.Y)
+@Html.EditorFor(m => m.CurrentPosition.Y)
+<br />
+@Html.LabelFor(m => m.CurrentPosition.SelectedDirection)
+@Html.DropDownListFor(m => m.CurrentPosition.SelectedDirection, Model.CurrentPosition.Directions)
+<br />
+@Html.LabelFor(m => m.MoveOrders)
+@Html.EditorFor(m => m.MoveOrders)
+}
