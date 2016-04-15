@@ -39,6 +39,11 @@ namespace MarsRover.Controllers
         {
             //Add error handling using maximum params to check the rover is in bounds
 
+            if (string.IsNullOrWhiteSpace(marsRover.MoveOrders))
+            {
+                return string.Empty;
+            }
+
             int x = marsRover.CurrentPosition.X;
             int y = marsRover.CurrentPosition.Y;
             string direction = marsRover.CurrentPosition.SelectedDirection;

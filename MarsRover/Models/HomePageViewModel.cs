@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,14 +26,21 @@ namespace MarsRover.Models
         }
 
         public List<MarsRoverModel> MarsRover { get; set; }
+
+        [Display(Name = "Upper Right X Coordinate")]
         public int UpperRightXCoOrdinate { get; set; }
+
+        [Display(Name = "Upper Right Y Coordinate")]
         public int UpperRightYCoOrdinate { get; set; }
     }
 
     public class MarsRoverModel
     {
         public CurrentPositionModel CurrentPosition { get; set; }
+
+        [Display(Name = "Move Orders")]
         public string MoveOrders { get; set; }
+
         public string FinalPosition { get; set; }
     }
 
@@ -52,7 +60,10 @@ namespace MarsRover.Models
 
         public int X { get; set; }
         public int Y { get; set; }
+
+        [Display(Name = "Starting Direction")]
         public string SelectedDirection { get; set; }
+
         public List<SelectListItem> Directions { get; set; }
     }
 }
